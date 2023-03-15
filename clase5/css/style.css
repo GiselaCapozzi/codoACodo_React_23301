@@ -1,0 +1,27 @@
+body {
+  background-color: aquamarine;
+ padding: 0;
+ margin: 0;
+}
+
+div{
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.busqueda {
+  display: block;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 75%;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.boton {
+  margin-left: 10px;
+  margin-right: 10px;
+}
