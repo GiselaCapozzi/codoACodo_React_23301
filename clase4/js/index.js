@@ -33,3 +33,6 @@ class Input {
 
 const myName = new Input('app', 'Name', 'text');
 myName.render();
+
+const fecha = new Input('app', null, 'date');
+fecha.render();
