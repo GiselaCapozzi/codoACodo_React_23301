@@ -10,13 +10,14 @@ class Button {
 
   render() {
     let myApp = document.getElementById(this.parentID);
-    myApp.innerHTML = `<button style="width: ${this.width}; height: ${this.height}; color: ${this.color}; background-color: ${this.fondo}">${this.texto}</button>`
+    myApp.innerHTML = myApp.innerHTML + `<button style="width: ${this.width}; height: ${this.height}; color: ${this.color}; background-color: ${this.fondo}">${this.texto}</button>`;
   }
 };
 
-const botonSaludar = new Button("app", '150px', '50px', 'white', 'blue', 'Saludar');
+const botonSaludar = new Button("app", '150px', '50px', 'white', 'blue', 'Saludar', 'saludar');
 botonSaludar.render();
-
+const botonDanger = new Button('app', '120px', '70px', 'white', 'red', 'Cuidado!', 'cuidado');
+botonDanger.render();
 class Input {
   constructor(parentID, placeholder, type) {
     this.parentID = parentID;
@@ -26,7 +27,7 @@ class Input {
 
   render() {
     let myApp = document.getElementById(this.parentID);
-    myApp.innerHTML = `<input type=${this.type} placeholder=${this.placeholder}>`
+    myApp.innerHTML = myApp.innerHTML + `<input type=${this.type} placeholder=${this.placeholder}>`
   }
 }
 
