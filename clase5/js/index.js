@@ -39,6 +39,14 @@ class Input {
     input.setAttribute('placeholder', this.placeholder);
     input.setAttribute('type', this.type);
     myApp.append(input);
+
+    input.addEventListener('keyup', e => {
+      document.querySelectorAll('.boton').forEach(boton => {
+        boton.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+          ? boton.classList.remove('filtro')
+          : boton.classList.add('filtro');
+      })
+    })
   }
 }
 const textoBoton = ['Create', 'Read', 'Update', 'Delete'];
