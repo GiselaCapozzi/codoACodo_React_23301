@@ -41,6 +41,9 @@ class Input {
     myApp.append(input);
 
     input.addEventListener('keyup', e => {
+
+      if (e.key === 'Escape') e.target.value = '';
+
       document.querySelectorAll('.boton').forEach(boton => {
         boton.textContent.toLowerCase().includes(e.target.value.toLowerCase())
           ? boton.classList.remove('filtro')
@@ -52,7 +55,7 @@ class Input {
 const textoBoton = ['Create', 'Read', 'Update', 'Delete'];
 
 function filtrarBoton(text) {
-  const inputBusqueda = new Input('app', 'Buscar...', 'text');
+  const inputBusqueda = new Input('app', 'Buscar...', 'search');
   inputBusqueda.render();
 }
 
@@ -64,3 +67,25 @@ function renderButton(text) {
 };
 
 textoBoton.map(boton => renderButton(boton));
+
+const arrayInput = ['Username', 'Surname', 'Password', 'E-mail'];
+
+function renderInput(type) {
+  let input_type = 'none';
+  switch (type) {
+    case 'Password':
+      input_type = 'password'
+      break;
+    case 'E-mail':
+      input_type = 'email';
+      break;
+    default:
+      input_type = 'text';
+      break;
+  }
+
+  let myInput = new Input('app', 'Buscar...', input_type);
+  myInput.render();
+}
+
+arrayInput.map(elem => renderInput(elem));
